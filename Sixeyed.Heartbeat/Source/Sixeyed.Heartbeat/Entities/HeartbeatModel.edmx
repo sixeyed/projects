@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HeartbeatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="HeartbeatModelStoreContainer">
+          <EntitySet Name="HeartbeatLogs" EntityType="HeartbeatModel.Store.HeartbeatLogs" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="HeartbeatLogs">
+          <Key>
+            <PropertyRef Name="HeartbeatLogId" />
+          </Key>
+          <Property Name="HeartbeatLogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HeartbeatInstanceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ComponentTypeName" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="StatusCode" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="PulseTimerInterval" Type="float" />
+          <Property Name="PulseCountInterval" Type="bigint" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="LogText" Type="nvarchar" MaxLength="500" />
+          <Property Name="TimerPulseNumber" Type="int" />
+          <Property Name="CountPulseNumber" Type="int" />
+          <Property Name="TimerMilliseconds" Type="float" />
+          <Property Name="CountNumber" Type="bigint" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HeartbeatModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="HeartbeatEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HeartbeatLogs" EntityType="HeartbeatModel.HeartbeatLog" />
+        </EntityContainer>
+        <EntityType Name="HeartbeatLog">
+          <Key>
+            <PropertyRef Name="HeartbeatLogId" />
+          </Key>
+          <Property Name="HeartbeatLogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeartbeatInstanceId" Type="Guid" Nullable="false" />
+          <Property Name="ComponentTypeName" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="StatusCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="PulseTimerInterval" Type="Double" />
+          <Property Name="PulseCountInterval" Type="Int64" />
+          <Property Name="LogDate" Type="DateTime" Nullable="false" />
+          <Property Name="LogText" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TimerPulseNumber" Type="Int32" />
+          <Property Name="CountPulseNumber" Type="Int32" />
+          <Property Name="TimerMilliseconds" Type="Double" />
+          <Property Name="CountNumber" Type="Int64" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HeartbeatModelStoreContainer" CdmEntityContainer="HeartbeatEntities">
+          <EntitySetMapping Name="HeartbeatLogs"><EntityTypeMapping TypeName="HeartbeatModel.HeartbeatLog"><MappingFragment StoreEntitySet="HeartbeatLogs">
+            <ScalarProperty Name="HeartbeatLogId" ColumnName="HeartbeatLogId" />
+            <ScalarProperty Name="HeartbeatInstanceId" ColumnName="HeartbeatInstanceId" />
+            <ScalarProperty Name="ComponentTypeName" ColumnName="ComponentTypeName" />
+            <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+            <ScalarProperty Name="PulseTimerInterval" ColumnName="PulseTimerInterval" />
+            <ScalarProperty Name="PulseCountInterval" ColumnName="PulseCountInterval" />
+            <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+            <ScalarProperty Name="LogText" ColumnName="LogText" />
+            <ScalarProperty Name="TimerPulseNumber" ColumnName="TimerPulseNumber" />
+            <ScalarProperty Name="CountPulseNumber" ColumnName="CountPulseNumber" />
+            <ScalarProperty Name="TimerMilliseconds" ColumnName="TimerMilliseconds" />
+            <ScalarProperty Name="CountNumber" ColumnName="CountNumber" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="HeartbeatModel">
+        <EntityTypeShape EntityType="HeartbeatModel.HeartbeatLog" Width="1.5" PointX="0.75" PointY="0.75" Height="3.3263964843749996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
