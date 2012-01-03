@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E0EFF18-4AB1-4CCB-A440-B42ABC8FB51A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sixeyed.Mapping.Tests</RootNamespace>
+    <AssemblyName>Sixeyed.Mapping.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoCommon.cs">
+      <Link>Properties\AssemblyInfoCommon.cs</Link>
+    </Compile>
+    <Compile Include="Bases\CachingStrategyTestBase.cs" />
+    <Compile Include="CachingStrategies\MemoryCacheCachingStrategyTest.cs" />
+    <Compile Include="CachingStrategies\DictionaryCachingStrategyTest.cs" />
+    <Compile Include="Extensions\StringExtensionsTest.cs" />
+    <Compile Include="Maps\AutoMaps\CsvAutoMapTest.cs" />
+    <Compile Include="Maps\AutoMaps\DataReaderAutoMapTest.cs" />
+    <Compile Include="Bases\ClassMapTestBase.cs" />
+    <Compile Include="Bases\CsvMapTestBase.cs" />
+    <Compile Include="Bases\DataReaderMapTestBase.cs" />
+    <Compile Include="Bases\XDocumentMapTestBase.cs" />
+    <Compile Include="Maps\CsvMapTest.cs" />
+    <Compile Include="Extensions\TypeExtensionsTest.cs" />
+    <Compile Include="Extensions\PropertyInfoExtensionsTest.cs" />
+    <Compile Include="MatchingStrategies\AggressiveNameMatchingStrategyTest.cs" />
+    <Compile Include="MatchingStrategies\SimpleNameMatchingStrategyTest.cs" />
+    <Compile Include="MatchingStrategies\ExactNameMatchingStrategyTest.cs" />
+    <Compile Include="MatchingStrategies\DataMemberOrderMatchingStrategyTest.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyMappings\CsvFieldMappingTest.cs" />
+    <Compile Include="Stubs\Classes\ExceptionThrowingUser.cs" />
+    <Compile Include="Stubs\Maps\XPathToUserMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserFromStubDataReaderMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserFroOrderedCsvMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserToDifferentCaseUserMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserFromCsvMap.cs" />
+    <Compile Include="Stubs\Maps\UserToPartialUserMap.cs" />
+    <Compile Include="Stubs\Maps\XAttributeToUserMap.cs" />
+    <Compile Include="Stubs\Maps\XDocumentToUserMap.cs" />
+    <Compile Include="Maps\AutoMaps\XDocumentAutoMapTest.cs" />
+    <Compile Include="Maps\DataReaderMapTest.cs" />
+    <Compile Include="Maps\ClassMapTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maps\AutoMaps\AutoMapTest.cs" />
+    <Compile Include="Stubs\Classes\Account.cs" />
+    <Compile Include="Stubs\Classes\Address.cs" />
+    <Compile Include="Stubs\Maps\AccountToPartialAccountMap.cs" />
+    <Compile Include="Stubs\Classes\PartialAccount.cs" />
+    <Compile Include="Stubs\Maps\FullUserToPartialUserWithActionsMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserToPartialUserWithFuncsMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserToConvertedPartialUserMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserFromDataReaderMap.cs" />
+    <Compile Include="Stubs\Maps\FullUserToPartialUserMap.cs" />
+    <Compile Include="Stubs\Classes\MixedUser.cs" />
+    <Compile Include="Stubs\Classes\DifferentCaseUser.cs" />
+    <Compile Include="Stubs\Classes\PartialAddress.cs" />
+    <Compile Include="Stubs\Strategies\PropertyDeclarationOrderMatchingStrategy.cs" />
+    <Compile Include="Stubs\Classes\UserModel.cs" />
+    <Compile Include="Stubs\Classes\User.cs" />
+    <Compile Include="Stubs\Classes\PostCode.cs" />
+    <Compile Include="Stubs\Strategies\LegacyNameMatchingStrategy.cs" />
+    <Compile Include="Stubs\Strategies\MemcachedCachingStrategy.cs" />
+    <Compile Include="Bases\TestBase.cs" />
+    <Compile Include="Maps\XDocumentMapTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sixeyed.Mapping\Sixeyed.Mapping.csproj">
+      <Project>{CC9FE347-0BB6-40FE-A7B4-89E93A8A9FAF}</Project>
+      <Name>Sixeyed.Mapping</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Stubs\Classes\FullAndMixedUser.cd" />
+    <None Include="Stubs\Classes\FullAndPartialUser.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stubs\StubData.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y/Q "$(ProjectDir)Stubs\StubData.sdf" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

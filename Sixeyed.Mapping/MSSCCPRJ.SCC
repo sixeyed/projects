@@ -1,0 +1,17 @@
+SCC = This is a source code control file
+
+[Sixeyed.Mapping.sln]
+SCC_Aux_Path = "P4SCC#1666##elton##code"
+SCC_Project_Name = Perforce Project
+
+[Sixeyed.Mapping.ConsoleTest.csproj]
+SCC_Aux_Path = "P4SCC#1666##elton##code"
+SCC_Project_Name = Perforce Project
+
+[Sixeyed.Mapping.Tests.csproj]
+SCC_Aux_Path = "P4SCC#1666##elton##code"
+SCC_Project_Name = Perforce Project
+
+[Sixeyed.Mapping.csproj]
+SCC_Aux_Path = "P4SCC#1666##elton##code"
+SCC_Project_Name = Perforce Project
